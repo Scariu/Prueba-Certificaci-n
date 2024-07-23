@@ -63,7 +63,7 @@ public class UsuarioController {
 		}
 	}*/
 
-	@GetMapping("/logout")
+	@PostMapping("/logout")
 	public String logoutUsuario() {
 		return "redirect:/login";
 	}

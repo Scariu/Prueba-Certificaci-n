@@ -26,8 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 						"/js/**")
 				.permitAll().antMatchers("/estacionamientos/nuevo", "/home-admin").hasRole("ADMIN")
 				.antMatchers("/home-usuario").hasRole("USER").anyRequest().authenticated().and().formLogin()
-				.loginPage("/usuarios/login").permitAll().successHandler(customAuth).and().logout().permitAll().and()
-				.csrf().disable();
+				.loginPage("/usuarios/login").permitAll().successHandler(customAuth).and().logout().logoutUrl("/logout").logoutSuccessUrl("/usuarios/login")
+				.permitAll().and().csrf().disable();
 	}
 
 	@Autowired

@@ -54,6 +54,7 @@
 			<button type="submit" class="btn btn-primary">Reservar</button>
 		</form>
 	</div>
+	<a href="/home">Regresar a Home</a>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOTb3B9W6p5ft7R2Hf6tz/4gkV9f4txmbrT5D8PqfN/3Fztz3"

@@ -56,7 +56,7 @@
 				</table>
 			</div>
 		</section>
-		<a href="/" class="btn btn-secondary">Regresar a Home</a>
+		<a href="/home" class="btn btn-secondary">Regresar a Home</a>
 	</div>
 </body>
 </html>

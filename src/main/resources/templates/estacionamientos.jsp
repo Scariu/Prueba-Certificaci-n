@@ -60,8 +60,8 @@
 				</tbody>
 			</table>
 		</div>
+		<a href="/home">Regresar a Home</a>
 	</section>
-	<a href="/">Regresar a Home</a>
 </body>
 </html>
 
