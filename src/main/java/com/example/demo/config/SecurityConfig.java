@@ -16,15 +16,18 @@ import com.example.demo.services.UsuarioDetailServiceImpl;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UsuarioDetailServiceImpl userDetailsService;
+	@Autowired
+	private CustomAuth customAuth;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers("/", "/usuarios/login", "/usuarios/registro", "/h2-console/**", "/resources/**", "/css/**",
 						"/js/**")
-				.permitAll().antMatchers("/estacionamientos/nuevo").hasRole("ADMIN").anyRequest().authenticated().and()
-				.formLogin().loginPage("/usuarios/login").permitAll().defaultSuccessUrl("/", true).and().logout()
-				.permitAll().and().csrf().disable();
+				.permitAll().antMatchers("/estacionamientos/nuevo", "/home-admin").hasRole("ADMIN")
+				.antMatchers("/home-usuario").hasRole("USER").anyRequest().authenticated().and().formLogin()
+				.loginPage("/usuarios/login").permitAll().successHandler(customAuth).and().logout().permitAll().and()
+				.csrf().disable();
 	}
 
 	@Autowired

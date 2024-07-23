@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Login Page</title>
+<title>Login</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -12,7 +12,7 @@
 <body>
 	<div class="container">
 		<h1>Login</h1>
-		<form method="POST" th:action="@{/usuarios/login}">
+		<form method="POST" action="/usuarios/login">
 			<p>
 				<label for="username">Usuario</label> <input type="text"
 					id="username" name="username" />
