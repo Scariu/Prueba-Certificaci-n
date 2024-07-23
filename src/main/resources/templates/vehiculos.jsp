@@ -42,11 +42,11 @@
 						<td>
 						<td>
 							<form th:action="@{/vehiculos/editar/{id}(id=${vehiculo.id})}"
-								method="get" style="display: inline;">
+								method="get">
 								<button type="submit">Editar</button>
 							</form>
 							<form th:action="@{/vehiculos/eliminar/{id}(id=${vehiculo.id})}"
-								method="post" style="display: inline;">
+								method="post">
 								<button type="submit"
 									onclick="return confirm('¿Estás seguro de que quieres eliminar este estacionamiento?');">Eliminar</button>
 							</form>
