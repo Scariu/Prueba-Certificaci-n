@@ -45,11 +45,11 @@
 								th:text="${reserva.estacionamiento != null ? reserva.estacionamiento.nombre : 'N/A'}">Estacionamiento</td>
 							<td>
 								<form th:action="@{/reservas/editar/{id}(id=${reserva.id})}"
-									method="get" style="display: inline;">
+									method="get">
 									<button type="submit" class="btn btn-warning btn-sm">Editar</button>
 								</form>
 								<form th:action="@{/reservas/eliminar/{id}(id=${reserva.id})}"
-									method="post" style="display: inline;">
+									method="post">
 									<button type="submit" class="btn btn-danger btn-sm"
 										onclick="return confirm('¿Estás seguro de que quieres eliminar esta reserva?');">Eliminar</button>
 								</form>

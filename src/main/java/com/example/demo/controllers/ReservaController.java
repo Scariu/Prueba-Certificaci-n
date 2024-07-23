@@ -70,7 +70,7 @@ public class ReservaController {
 	@PostMapping("/eliminar/{id}")
 	public String eliminarReserva(@PathVariable Long id) {
 		reservaService.eliminarReserva(id);
-		return "redirect:/mis-reservas";
+		return "redirect:/reservas";
 	}
 
 }
