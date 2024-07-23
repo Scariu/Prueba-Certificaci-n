@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.models.Estacionamiento;
 import com.example.demo.models.Reserva;
+import com.example.demo.models.Usuario;
 import com.example.demo.models.Vehiculo;
 import com.example.demo.services.EstacionamientoService;
 import com.example.demo.services.ReservaService;
+import com.example.demo.services.UsuarioService;
 import com.example.demo.services.VehiculoService;
 
 @Controller
@@ -25,6 +27,8 @@ public class ReservaController {
 	private VehiculoService vehiculoService;
 	@Autowired
 	private EstacionamientoService estacionamientoService;
+	@Autowired
+	private UsuarioService usuarioService;
 
 	@GetMapping
 	public String listarReservas(Model model) {
@@ -37,8 +41,10 @@ public class ReservaController {
 	public String mostrarFormularioNuevaReserva(Model model) {
 		List<Vehiculo> vehiculos = vehiculoService.obtenerTodosLosVehiculos();
 		List<Estacionamiento> estacionamientos = estacionamientoService.obtenerTodosLosEstacionamientos();
+		List<Usuario> usuarios = usuarioService.obtenerTodosLosUsuarios(); 
 		model.addAttribute("vehiculos", vehiculos);
 		model.addAttribute("estacionamientos", estacionamientos);
+		model.addAttribute("usuarios", usuarios);
 		model.addAttribute("reserva", new Reserva());
 		return "reservar";
 	}
@@ -53,9 +59,11 @@ public class ReservaController {
 	public String mostrarFormularioEditarReserva(@PathVariable Long id, Model model) {
 		Reserva reserva = reservaService.obtenerReservaPorId(id);
 		List<Vehiculo> vehiculos = vehiculoService.obtenerTodosLosVehiculos();
+		List<Usuario> usuarios = usuarioService.obtenerTodosLosUsuarios();
 		List<Estacionamiento> estacionamientos = estacionamientoService.obtenerTodosLosEstacionamientos();
 		model.addAttribute("reserva", reserva);
 		model.addAttribute("vehiculos", vehiculos);
+		model.addAttribute("usuarios", usuarios);
 		model.addAttribute("estacionamientos", estacionamientos);
 		return "editar-reserva";
 	}

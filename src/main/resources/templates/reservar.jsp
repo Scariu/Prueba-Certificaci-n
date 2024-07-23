@@ -51,6 +51,14 @@
 						th:text="${estacionamiento.nombre}"></option>
 				</select>
 			</div>
+			<div class="mb-3">
+				<label for="usuario" class="form-label">Usuario</label> <select
+					class="form-select" id="usuario" name="usuario" required>
+					<option value="" disabled selected>Seleccione el usuario</option>
+					<option th:each="usuario : ${usuarios}" th:value="${usuario.id}"
+						th:text="${usuario.nombre}"></option>
+				</select>
+			</div>
 			<button type="submit" class="btn btn-primary">Reservar</button>
 		</form>
 	</div>
