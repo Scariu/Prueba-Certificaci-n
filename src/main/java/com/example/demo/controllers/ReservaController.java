@@ -64,7 +64,7 @@ public class ReservaController {
 	public String actualizarReserva(@PathVariable Long id, @ModelAttribute Reserva reserva) {
 		reserva.setId(id);
 		reservaService.actualizarReserva(reserva);
-		return "mis-reservas";
+		return "redirect:/reservas";
 	}
 
 	@PostMapping("/eliminar/{id}")
